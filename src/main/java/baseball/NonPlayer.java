@@ -7,7 +7,7 @@ public class NonPlayer {
         answer = new Integer[3];
         for (int i = 0; i < 3; i++) {
             answer[i] = (int) (Math.random() * 10);
-            if (answer[i] == 0) i--;
+            if (answer[i] == 0 || existAlready(answer[i], i)) i--;
         }
     }
 
@@ -22,8 +22,15 @@ public class NonPlayer {
         return new Result(ball, strikes);
     }
 
+    private boolean existAlready(int createdItem, int index) {
+        for (int n = 0; n < index; n++) {
+            if (createdItem == answer[n]) return true;
+        }
+        return false;
+    }
+
     private boolean ball(Integer[] input, int i) {
-        for (int n = i + 1; n < 3; n++) {
+        for (int n = 0; n < 3; n++) {
             if (input[i].equals(answer[n])) return true;
         }
         return false;

@@ -31,8 +31,8 @@ public class Game {
         if (splitInput.length != 3) throw new IllegalArgumentException();
         Integer[] inputInt = new Integer[3];
         for (int i = 0; i < 3; i++) {
-            inputInt[i] = Integer.getInteger(splitInput[i], null);
-            if (inputInt[i] == null || inputInt[i] > 9 || inputInt[i] < 0) throw new IllegalArgumentException();
+            inputInt[i] = Integer.parseInt(splitInput[i]); // TODO: 2023/05/17 number format exception
+            if (inputInt[i] > 9 || inputInt[i] < 0) throw new IllegalArgumentException();
         }
 
         return inputInt;
