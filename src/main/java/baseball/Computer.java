@@ -1,18 +1,28 @@
 package baseball;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Computer {
 
-    private final int startInclusive;
-    private final int endInclusive;
+    private final int startInclusive = 1;
+    private final int endInclusive = 9;
 
-    public Computer(final int startInclusive, final int endInclusive) {
-        this.startInclusive = startInclusive;
-        this.endInclusive = endInclusive;
+    private List<Integer> targetNumberDigits;
+
+    public List<Integer> getRandomTargetNumberDigits() {
+        if (targetNumberDigits == null) {
+            createRandomTargetNumberDigits();
+        }
+        return targetNumberDigits;
     }
 
-    public int getRandomTargetNumber() {
-        return Randoms.pickNumberInRange(startInclusive, endInclusive);
+    private void createRandomTargetNumberDigits() {
+        targetNumberDigits = new LinkedList<>();
+        for (int i = 0; i < 3; i++) {
+            int randomInteger = Randoms.pickNumberInRange(startInclusive, endInclusive);
+            targetNumberDigits.add(randomInteger);
+        }
     }
 }
