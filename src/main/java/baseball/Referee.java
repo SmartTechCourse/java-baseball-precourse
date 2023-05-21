@@ -35,7 +35,7 @@ public class Referee {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (i != j) {
-                    if (targetNumberDigits.get(i).equals(inputNumberDigits.get(i))) {
+                    if (targetNumberDigits.get(i).equals(inputNumberDigits.get(j))) {
                         numberOfBall += 1;
                     }
                 }
