@@ -9,9 +9,7 @@ public class Computer {
     private List<Integer> targetNumberDigits;
 
     public List<Integer> getRandomTargetNumberDigits() {
-        if (targetNumberDigits == null) {
-            createRandomTargetNumberDigits();
-        }
+        createRandomTargetNumberDigits();
         return targetNumberDigits;
     }
 
@@ -20,6 +18,7 @@ public class Computer {
         final int endInclusive = 9;
 
         targetNumberDigits = new LinkedList<>();
+        // TODO: 인덴트 2이하로 줄이기.
         while (targetNumberDigits.size() < 3) {
             int randomInteger = Randoms.pickNumberInRange(startInclusive, endInclusive);
             if (!targetNumberDigits.contains(randomInteger)) {
