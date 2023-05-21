@@ -6,9 +6,6 @@ import java.util.List;
 
 public class Computer {
 
-    private final int startInclusive = 1;
-    private final int endInclusive = 9;
-
     private List<Integer> targetNumberDigits;
 
     public List<Integer> getRandomTargetNumberDigits() {
@@ -19,6 +16,9 @@ public class Computer {
     }
 
     private void createRandomTargetNumberDigits() {
+        final int startInclusive = 1;
+        final int endInclusive = 9;
+
         targetNumberDigits = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
             int randomInteger = Randoms.pickNumberInRange(startInclusive, endInclusive);
