@@ -36,11 +36,11 @@ public class BaseballGame {
                 System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
                 String restartString = Console.readLine();
 
-                if (restartString == "1") {
+                if (restartString.equals("1")) {
                     targetNumberDigits = computer.getRandomTargetNumberDigits();
                     // TODO: 더 나은 방법 생각해보기.
                     referee.initializeMatchResult();
-                } else if (restartString == "2") {
+                } else if (restartString.equals("2")) {
                     end();
                 }
                 else {

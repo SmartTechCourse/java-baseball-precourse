@@ -35,7 +35,7 @@ public class Referee {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (i != j) {
-                    if (targetNumberDigits.get(i) == inputNumberDigits.get(i)) {
+                    if (targetNumberDigits.get(i).equals(inputNumberDigits.get(i))) {
                         numberOfBall += 1;
                     }
                 }
@@ -50,7 +50,7 @@ public class Referee {
 
         // TODO: 인덴트 2이하로 줄이기.
         for (int i = 0; i < 3; i++) {
-            if (targetNumberDigits.get(i) == inputNumberDigits.get(i)) {
+            if (targetNumberDigits.get(i).equals(inputNumberDigits.get(i))) {
                 numberOfStrike += 1;
             }
         }
