@@ -7,6 +7,7 @@ import java.util.List;
 public class Player {
 
     public List<Integer> readValidNumber() throws IllegalArgumentException {
+        System.out.print("숫자를 입력해주세요 :");
         String inputString = Console.readLine();
         if (!Validator.canConvertStringToInteger(inputString)) {
             throw new IllegalArgumentException("올바른 숫자 형식으로 입력해주세요.");
