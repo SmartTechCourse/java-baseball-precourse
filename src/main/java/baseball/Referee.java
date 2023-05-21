@@ -65,7 +65,7 @@ public class Referee {
         if (numberOfStrike > 0) {
             System.out.print(numberOfStrike +"스트라이크");
         }
-        else{
+        if (numberOfBall == 0 && numberOfStrike == 0) {
             System.out.print("낫싱");
         }
         System.out.println();
