@@ -20,9 +20,12 @@ public class Computer {
         final int endInclusive = 9;
 
         targetNumberDigits = new LinkedList<>();
-        for (int i = 0; i < 3; i++) {
+        while (targetNumberDigits.size() < 3) {
             int randomInteger = Randoms.pickNumberInRange(startInclusive, endInclusive);
-            targetNumberDigits.add(randomInteger);
+            if (!targetNumberDigits.contains(randomInteger)) {
+                targetNumberDigits.add(randomInteger);
+            }
         }
+
     }
 }
