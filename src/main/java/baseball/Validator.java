@@ -8,6 +8,7 @@ public class Validator {
         checkTypeConverting(input);
         checkDuplication(input);
         checkContainZero(input);
+        checkLength(input);
     }
 
     private static void checkTypeConverting(String input) {
@@ -30,6 +31,12 @@ public class Validator {
     private static void checkContainZero(String input) {
         if (input.contains("0")) {
             throw new IllegalArgumentException("입력 값에 0은 포함될 수 없습니다. 1부터 9까지 숫자만 입력해주세요.");
+        }
+    }
+
+    private static void checkLength(String input) {
+        if (input.length() != 3) {
+            throw new IllegalArgumentException("입력값의 개수가 유효하지 않습니다. 3개의 숫자를 입력해주세요.");
         }
     }
 }
