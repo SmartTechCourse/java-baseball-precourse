@@ -2,6 +2,13 @@ package baseball;
 
 public class Application {
     public static void main(String[] args) {
-        //TODO: 숫자 야구 게임 구현
+
+        Player player = new Player();
+        Opponent computer = new Opponent();
+        Referee referee = new Referee(player, computer);
+        View view = new View();
+
+        Game game = new Game(referee, view);
+        game.run();
     }
 }
