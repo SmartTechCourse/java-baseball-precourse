@@ -1,7 +1,9 @@
 package baseball;
 
 import camp.nextstep.edu.missionutils.Console;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Player {
 
@@ -14,4 +16,10 @@ public class Player {
         return number;
     }
 
+    private List<Integer> convertStringToIntegerList(String input) {
+        return Arrays
+            .stream(input.split(""))
+            .map(Integer::parseInt)
+            .collect(Collectors.toList());
+    }
 }
