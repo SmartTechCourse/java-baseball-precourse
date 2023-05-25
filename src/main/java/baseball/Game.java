@@ -10,9 +10,9 @@ public class Game {
 
     private boolean isRunning;
 
-    private String RESTART_SIGNAL = "1";
+    private final String RESTART_SIGNAL = "1";
 
-    private String CLOSE_SIGNAL = "2";
+    private final String CLOSE_SIGNAL = "2";
 
     public Game(Referee referee, View view) {
         this.referee = referee;
