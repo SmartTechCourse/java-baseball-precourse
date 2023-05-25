@@ -23,6 +23,7 @@ public class Game {
         isRunning = true;
 
         while (isRunning) {
+            view.printNumberInputMessage();
             JudgementResult judgementResult = referee.judge();
             view.print(judgementResult);
             checkKeepRunning(judgementResult);
