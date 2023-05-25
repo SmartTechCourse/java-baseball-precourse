@@ -24,6 +24,7 @@ public class Opponent {
     }
 
     public void resetNumber() {
-
+        number.clear();
+        generateNumber();
     }
 }
