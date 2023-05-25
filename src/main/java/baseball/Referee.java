@@ -15,7 +15,7 @@ public class Referee {
     }
     public JudgementResult judge() {
         List<Integer> playerNumber = player.getNumber();
-        List<Integer> opponentNumber = computer.getTargetNumber();
+        List<Integer> opponentNumber = computer.getNumber();
 
         return compare(playerNumber, opponentNumber);
     }

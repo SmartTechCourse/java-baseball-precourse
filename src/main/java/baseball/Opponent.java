@@ -1,16 +1,14 @@
 package baseball;
 
-import camp.nextstep.edu.missionutils.Randoms;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Opponent {
 
-    public List<Integer> getTargetNumber() {
+    public List<Integer> getNumber() {
 
     }
 
-    public void resetTargetNumber() {
+    public void resetNumber() {
 
     }
 }
