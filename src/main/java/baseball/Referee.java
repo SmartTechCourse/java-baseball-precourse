@@ -44,6 +44,6 @@ public class Referee {
     }
 
     public void requestToChangeOpponentNumber() {
-
+        computer.resetNumber();
     }
 }
