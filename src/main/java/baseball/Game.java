@@ -10,6 +10,10 @@ public class Game {
 
     private boolean isRunning;
 
+    private String RESTART_SIGNAL = "1";
+
+    private String CLOSE_SIGNAL = "2";
+
     public Game(Referee referee, View view) {
         this.referee = referee;
         this.view = view;
@@ -26,7 +30,32 @@ public class Game {
     }
 
     private void checkKeepRunning(JudgementResult judgementResult) {
+        if (judgementResult.isMaxStrike()) {
+            checkRestartOrClose();
+        }
+    }
 
+    private void checkRestartOrClose() {
+        String inputString = Console.readLine();
+
+        if (inputString.equals(RESTART_SIGNAL)) {
+            restart();
+        }
+        else if (inputString.equals(CLOSE_SIGNAL)) {
+            close();
+        }
+        else {
+            throw new IllegalArgumentException("1 또는 2를 입력해주세요.");
+        }
+
+    }
+
+    private void restart() {
+        referee.requestToChangeOpponentNumber();
+    }
+
+    private void close() {
+        isRunning = false;
     }
 
 }
