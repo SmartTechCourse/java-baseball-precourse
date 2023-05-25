@@ -17,7 +17,10 @@ public class Opponent {
     }
 
     private void generateNumber() {
-
+        for (int i = 0; i < 3; i++) {
+            int randomNumber = Randoms.pickNumberInRange(1, 9);
+            number.add(randomNumber);
+        }
     }
 
     public void resetNumber() {
