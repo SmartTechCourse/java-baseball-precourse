@@ -1,9 +1,8 @@
 package baseball;
 
 import camp.nextstep.edu.missionutils.Randoms;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Opponent {
 
@@ -11,6 +10,7 @@ public class Opponent {
 
     public List<Integer> getNumber() {
         if (number == null) {
+            number = new ArrayList<>();
             generateNumber();
         }
         return number;
