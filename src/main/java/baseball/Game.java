@@ -41,14 +41,11 @@ public class Game {
 
         if (inputString.equals(RESTART_SIGNAL)) {
             restart();
-        }
-        else if (inputString.equals(CLOSE_SIGNAL)) {
+        } else if (inputString.equals(CLOSE_SIGNAL)) {
             close();
-        }
-        else {
+        } else {
             throw new IllegalArgumentException("1 또는 2를 입력해주세요.");
         }
-
     }
 
     private void restart() {
@@ -58,5 +55,4 @@ public class Game {
     private void close() {
         isRunning = false;
     }
-
 }
