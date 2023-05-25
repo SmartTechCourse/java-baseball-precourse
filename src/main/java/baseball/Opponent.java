@@ -2,6 +2,7 @@ package baseball;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class Opponent {
@@ -17,10 +18,12 @@ public class Opponent {
     }
 
     private void generateNumber() {
-        for (int i = 0; i < 3; i++) {
-            int randomNumber = Randoms.pickNumberInRange(1, 9);
-            number.add(randomNumber);
+        HashSet<Integer> digits = new HashSet<>();
+        while (digits.size() < 3) {
+            int randomDigit = Randoms.pickNumberInRange(1, 9);
+            digits.add(randomDigit);
         }
+        number.addAll(digits);
     }
 
     public void resetNumber() {
