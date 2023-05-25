@@ -6,12 +6,12 @@ public class JudgementResult {
 
     private final int numberOfBall;
 
-    private final boolean isGameOver;
+    private final int MAX_STRIKE = 3;
 
-    public JudgementResult(int numberOfStrike, int numberOfBall, boolean isGameOver) {
+
+    public JudgementResult(int numberOfStrike, int numberOfBall) {
         this.numberOfStrike = numberOfStrike;
         this.numberOfBall = numberOfBall;
-        this.isGameOver = isGameOver;
     }
 
     public int getNumberOfStrike() {
@@ -22,7 +22,8 @@ public class JudgementResult {
         return numberOfBall;
     }
 
-    public boolean isGameOver() {
-        return isGameOver;
+    public boolean isMaxStrike() {
+        return numberOfStrike == MAX_STRIKE;
     }
+
 }
