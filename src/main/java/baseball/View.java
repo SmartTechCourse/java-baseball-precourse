@@ -14,18 +14,7 @@ public class View {
             return;
         }
 
-        int numberOfBall = result.getNumberOfBall();
-        int numberOfStrike = result.getNumberOfStrike();
-        StringBuilder stringBuilder = new StringBuilder();
-
-        if (numberOfBall > 0) {
-            stringBuilder.append(numberOfBall+"볼 ");
-        }
-        if (result.getNumberOfStrike() > 0) {
-            stringBuilder.append(numberOfStrike+"스트라이크 ");
-        }
-        String JudgementResultMessage = stringBuilder.toString();
-
+        String JudgementResultMessage = makeJudgementResultMessage(result);
         if (JudgementResultMessage.isEmpty()) {
             System.out.println("낫싱");
         } else {
@@ -36,5 +25,18 @@ public class View {
     private void printGameOverMessage() {
         System.out.println(CLOSE_GUIDE.getBody());
         System.out.println(RESTART_OR_CLOSE_GUIDE.getBody());
+    }
+
+    private String makeJudgementResultMessage(JudgementResult judgementResult) {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        if (judgementResult.getNumberOfBall() > 0) {
+            stringBuilder.append(judgementResult.getNumberOfBall() + "볼 ");
+        }
+        if (judgementResult.getNumberOfStrike() > 0) {
+            stringBuilder.append(judgementResult.getNumberOfStrike() + "스트라이크 ");
+        }
+        String JudgementResultMessage = stringBuilder.toString();
+        return JudgementResultMessage;
     }
 }
