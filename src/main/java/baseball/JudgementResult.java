@@ -1,7 +1,6 @@
 package baseball;
 
 public class JudgementResult {
-
     private final int numberOfStrike;
 
     private final int numberOfBall;
@@ -25,5 +24,4 @@ public class JudgementResult {
     public boolean isMaxStrike() {
         return numberOfStrike == MAX_STRIKE;
     }
-
 }
