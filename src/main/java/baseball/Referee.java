@@ -34,8 +34,4 @@ public class Referee {
                 return opponentNumberIndex != playerNumberIndex && opponentNumberIndex != -1;})
             .count();
     }
-
-    public void requestToChangeNumber(Opponent computer) {
-        computer.resetNumber();
-    }
 }

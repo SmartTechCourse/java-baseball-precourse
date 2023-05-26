@@ -7,27 +7,27 @@ import java.util.List;
 
 public class Opponent {
 
-    private List<Integer> number;
+    private List<Integer> number = new ArrayList<>();
 
     public List<Integer> getNumber() {
-        if (number == null) {
-            number = new ArrayList<>();
+        if (number.isEmpty()) {
             generateNumber();
         }
         return number;
     }
 
     private void generateNumber() {
-        HashSet<Integer> digits = new HashSet<>();
-        while (digits.size() < 3) {
-            int randomDigit = Randoms.pickNumberInRange(1, 9);
-            digits.add(randomDigit);
+        HashSet<Integer> digitsWithoutZero = new HashSet<>();
+        while (digitsWithoutZero.size() < 3) {
+            digitsWithoutZero.add(getRandomDigitWithoutZero());
         }
-        number.addAll(digits);
+        number.addAll(digitsWithoutZero);
     }
 
-    public void resetNumber() {
-        number.clear();
-        generateNumber();
+    private int getRandomDigitWithoutZero() {
+        final int startInclusive = 1;
+        final int endInclusive = 9;
+
+        return Randoms.pickNumberInRange(startInclusive, endInclusive);
     }
 }
