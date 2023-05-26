@@ -1,9 +1,11 @@
 package baseball;
 
+import static baseball.Message.*;
+
 public class View {
 
     public void printNumberInputMessage() {
-        System.out.print("숫자를 입력해주세요 : ");
+        System.out.print(INPUT_NUMBER_GUIDE.getBody());
     }
 
     public void print(JudgementResult result) {
@@ -32,7 +34,7 @@ public class View {
     }
 
     private void printGameOverMessage() {
-        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
-        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        System.out.println(CLOSE_GUIDE.getBody());
+        System.out.println(RESTART_OR_CLOSE_GUIDE.getBody());
     }
 }

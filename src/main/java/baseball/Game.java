@@ -44,7 +44,7 @@ public class Game {
         } else if (inputString.equals(CLOSE_SIGNAL)) {
             close();
         } else {
-            throw new IllegalArgumentException("1 또는 2를 입력해주세요.");
+            throw new IllegalArgumentException(Message.RESTART_OR_CLOSE_SIGNAL_INVALID_ERROR.getBody());
         }
     }
 

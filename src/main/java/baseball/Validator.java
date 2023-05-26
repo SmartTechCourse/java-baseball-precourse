@@ -2,6 +2,8 @@ package baseball;
 
 import java.util.Arrays;
 
+import static baseball.Message.*;
+
 public class Validator {
 
     public static void validate(String input) {
@@ -13,7 +15,7 @@ public class Validator {
 
     private static void checkTypeConverting(String input) {
         if (input == null || !input.matches("[0-9]+")) {
-            throw new IllegalArgumentException("입력값에 숫자가 아닌 다른 값이 포함돼있습니다. 숫자만 입력해주세요.");
+            throw new IllegalArgumentException(USER_NUMBER_NOT_NUMBER_ERROR.getBody());
         }
     }
 
@@ -24,19 +26,19 @@ public class Validator {
             .count();
 
         if (nonDuplicateWordCount != input.length()) {
-            throw new IllegalArgumentException("입력값에 중복이 포함돼있습니다. 중복되지 않는 숫자를 입력해주세요.");
+            throw new IllegalArgumentException(USER_NUMBER_DUPLICATE_ERROR.getBody());
         }
     }
 
     private static void checkContainZero(String input) {
         if (input.contains("0")) {
-            throw new IllegalArgumentException("입력 값에 0은 포함될 수 없습니다. 1부터 9까지 숫자만 입력해주세요.");
+            throw new IllegalArgumentException(USER_NUMBER_CONTAIN_ZERO_ERROR.getBody());
         }
     }
 
     private static void checkLength(String input) {
         if (input.length() != 3) {
-            throw new IllegalArgumentException("입력값의 개수가 유효하지 않습니다. 3개의 숫자를 입력해주세요.");
+            throw new IllegalArgumentException(USER_NUMBER_LENGTH_ERROR.getBody());
         }
     }
 }
