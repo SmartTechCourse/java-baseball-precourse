@@ -5,15 +5,7 @@ import java.util.stream.IntStream;
 
 public class Referee {
 
-    private Player player;
-
-    private Opponent computer;
-
-    public Referee(Player player, Opponent computer) {
-        this.player = player;
-        this.computer = computer;
-    }
-    public JudgementResult judge() {
+    public JudgementResult judge(Player player, Opponent computer) {
         List<Integer> playerNumber = player.getNumber();
         List<Integer> opponentNumber = computer.getNumber();
 
@@ -43,7 +35,7 @@ public class Referee {
             .count();
     }
 
-    public void requestToChangeOpponentNumber() {
+    public void requestToChangeNumber(Opponent computer) {
         computer.resetNumber();
     }
 }

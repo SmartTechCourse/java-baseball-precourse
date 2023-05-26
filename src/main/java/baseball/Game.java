@@ -2,11 +2,17 @@ package baseball;
 
 import camp.nextstep.edu.missionutils.Console;
 
+import static baseball.Message.*;
+
 public class Game {
 
     private Referee referee;
 
     private View view;
+
+    private Player player;
+
+    private Opponent computer;
 
     private boolean isRunning;
 
@@ -14,9 +20,11 @@ public class Game {
 
     private final String CLOSE_SIGNAL = "2";
 
-    public Game(Referee referee, View view) {
+    public Game(Referee referee, View view, Player player, Opponent computer) {
         this.referee = referee;
         this.view = view;
+        this.player = player;
+        this.computer = computer;
     }
 
     public void run() {
@@ -24,7 +32,7 @@ public class Game {
 
         while (isRunning) {
             view.printNumberInputMessage();
-            JudgementResult judgementResult = referee.judge();
+            JudgementResult judgementResult = referee.judge(player, computer);
             view.print(judgementResult);
             checkKeepRunning(judgementResult);
         }
@@ -44,12 +52,12 @@ public class Game {
         } else if (inputString.equals(CLOSE_SIGNAL)) {
             close();
         } else {
-            throw new IllegalArgumentException(Message.RESTART_OR_CLOSE_SIGNAL_INVALID_ERROR.getBody());
+            throw new IllegalArgumentException(RESTART_OR_CLOSE_SIGNAL_INVALID_ERROR.getBody());
         }
     }
 
     private void restart() {
-        referee.requestToChangeOpponentNumber();
+        referee.requestToChangeNumber(computer);
     }
 
     private void close() {

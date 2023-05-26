@@ -2,13 +2,11 @@ package baseball;
 
 public class Application {
     public static void main(String[] args) {
-
+        Referee referee = new Referee();
+        View view = new View();
         Player player = new Player();
         Opponent computer = new Opponent();
-        Referee referee = new Referee(player, computer);
-        View view = new View();
-
-        Game game = new Game(referee, view);
+        Game game = new Game(referee, view, player, computer);
         game.run();
     }
 }
