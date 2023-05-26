@@ -4,8 +4,8 @@ import static baseball.Message.*;
 
 public class View {
 
-    public static void printNumberInputMessage() {
-        System.out.print(INPUT_NUMBER_GUIDE.getBody());
+    public static void print(Message message) {
+        System.out.print(message.getBody());
     }
 
     public static void print(JudgementResult result) {
@@ -36,7 +36,6 @@ public class View {
         if (judgementResult.getNumberOfStrike() > 0) {
             stringBuilder.append(judgementResult.getNumberOfStrike() + "스트라이크 ");
         }
-        String JudgementResultMessage = stringBuilder.toString();
-        return JudgementResultMessage;
+        return stringBuilder.toString();
     }
 }
