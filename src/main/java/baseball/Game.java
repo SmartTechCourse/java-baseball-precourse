@@ -8,32 +8,26 @@ public class Game {
 
     private Referee referee;
 
-    private View view;
-
-    private Player player;
-
-    private Opponent computer;
-
     private boolean isRunning;
 
     private final String RESTART_SIGNAL = "1";
 
     private final String CLOSE_SIGNAL = "2";
 
-    public Game(Referee referee, View view, Player player, Opponent computer) {
+    public Game(Referee referee) {
         this.referee = referee;
-        this.view = view;
-        this.player = player;
-        this.computer = computer;
     }
 
     public void run() {
         isRunning = true;
 
+        Player player = new Player();
+        Opponent computer = new Opponent();
+
         while (isRunning) {
-            view.printNumberInputMessage();
+            View.printNumberInputMessage();
             JudgementResult judgementResult = referee.judge(player, computer);
-            view.print(judgementResult);
+            View.print(judgementResult);
             checkKeepRunning(judgementResult);
         }
     }

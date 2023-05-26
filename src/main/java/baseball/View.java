@@ -4,11 +4,11 @@ import static baseball.Message.*;
 
 public class View {
 
-    public void printNumberInputMessage() {
+    public static void printNumberInputMessage() {
         System.out.print(INPUT_NUMBER_GUIDE.getBody());
     }
 
-    public void print(JudgementResult result) {
+    public static void print(JudgementResult result) {
         if (result.isMaxStrike()) {
             printGameOverMessage();
             return;
@@ -22,12 +22,12 @@ public class View {
         }
     }
 
-    private void printGameOverMessage() {
+    private static void printGameOverMessage() {
         System.out.println(CLOSE_GUIDE.getBody());
         System.out.println(RESTART_OR_CLOSE_GUIDE.getBody());
     }
 
-    private String makeJudgementResultMessage(JudgementResult judgementResult) {
+    private static String makeJudgementResultMessage(JudgementResult judgementResult) {
         StringBuilder stringBuilder = new StringBuilder();
 
         if (judgementResult.getNumberOfBall() > 0) {
