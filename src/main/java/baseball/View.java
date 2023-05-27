@@ -19,11 +19,6 @@ public class View {
     private static String makeJudgementResultMessage(JudgementResult judgementResult) {
         StringBuilder stringBuilder = new StringBuilder();
 
-        if (judgementResult.isMaxStrike()) {
-            stringBuilder.append(MAX_STRIKE_AND_CLOSE_GUIDE.getBody());
-            return stringBuilder.toString();
-        }
-
         if (judgementResult.getNumberOfBall() > 0) {
             stringBuilder.append(judgementResult.getNumberOfBall() + "볼 ");
         }
@@ -33,6 +28,10 @@ public class View {
 
         if (judgementResult.getNumberOfBall() == 0 && judgementResult.getNumberOfStrike() == 0) {
             stringBuilder.append("낫싱");
+        }
+
+        if (judgementResult.isMaxStrike()) {
+            stringBuilder.append(MAX_STRIKE_AND_CLOSE_GUIDE.getBody());
         }
 
         return stringBuilder.toString();
