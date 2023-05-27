@@ -16,7 +16,7 @@ public class Game {
             View.print(Message.INPUT_NUMBER_GUIDE);
             JudgementResult judgementResult = referee.judge(player.getNumber(), computer.getNumber());
             View.print(judgementResult);
-            checkKeepRunning(judgementResult);
+            keepRunningOrClose(judgementResult);
         }
     }
 
@@ -27,9 +27,13 @@ public class Game {
         isRunning = true;
     }
 
-    private void checkKeepRunning(JudgementResult judgementResult) {
+    private void keepRunningOrClose(JudgementResult judgementResult) {
         if (judgementResult.isMaxStrike()) {
-            isRunning = false;
+            close();
         }
+    }
+
+    private void close() {
+        isRunning = false;
     }
 }
