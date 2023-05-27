@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Opponent {
-
     private List<Integer> number = new ArrayList<>();
 
     public List<Integer> getNumber() {

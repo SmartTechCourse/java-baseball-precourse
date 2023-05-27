@@ -5,7 +5,6 @@ import java.util.Arrays;
 import static baseball.Message.*;
 
 public class Validator {
-
     public static void validate(String input) {
         checkTypeConverting(input);
         checkDuplication(input);

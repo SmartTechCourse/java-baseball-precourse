@@ -3,7 +3,6 @@ package baseball;
 import static baseball.Message.*;
 
 public class View {
-
     public static void print(Message message) {
         System.out.print(message.getBody());
     }
