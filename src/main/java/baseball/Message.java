@@ -2,7 +2,7 @@ package baseball;
 
 public enum Message {
     INPUT_NUMBER_GUIDE("숫자를 입력해주세요 : "),
-    CLOSE_GUIDE("3개의 숫자를 모두 맞히셨습니다! 게임 종료"),
+    MAX_STRIKE_AND_CLOSE_GUIDE("3개의 숫자를 모두 맞히셨습니다! 게임 종료"),
     RESTART_OR_CLOSE_GUIDE("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요."),
 
 

@@ -9,15 +9,15 @@ public class Game {
 
     private boolean isRunning;
 
-    public void start() {
+
+    public void proceed() {
         initializeProperty();
 
         while (isRunning) {
-            View.print(Message.INPUT_NUMBER_GUIDE);
-            JudgementResult judgementResult = referee.judge(player.getNumber(), computer.getNumber());
-            View.print(judgementResult);
-            keepRunningOrClose(judgementResult);
+            run();
         }
+
+        close();
     }
 
     private void initializeProperty() {
@@ -27,13 +27,20 @@ public class Game {
         isRunning = true;
     }
 
-    private void keepRunningOrClose(JudgementResult judgementResult) {
+    private void run() {
+        View.print(Message.INPUT_NUMBER_GUIDE);
+        JudgementResult judgementResult = referee.judge(player.getNumber(), computer.getNumber());
+        View.print(judgementResult);
+        determineKeepRunning(judgementResult);
+    }
+
+    private void determineKeepRunning(JudgementResult judgementResult) {
         if (judgementResult.isMaxStrike()) {
-            close();
+            isRunning = false;
         }
     }
 
     private void close() {
-        isRunning = false;
+        View.println(Message.RESTART_OR_CLOSE_GUIDE);
     }
 }

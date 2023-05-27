@@ -7,27 +7,22 @@ public class View {
         System.out.print(message.getBody());
     }
 
-    public static void print(JudgementResult result) {
-        if (result.isMaxStrike()) {
-            printGameOverMessage();
-            return;
-        }
-
-        String JudgementResultMessage = makeJudgementResultMessage(result);
-        if (JudgementResultMessage.isEmpty()) {
-            System.out.println("낫싱");
-        } else {
-            System.out.println(JudgementResultMessage);
-        }
+    public static void println(Message message) {
+        System.out.println(message.getBody());
     }
 
-    private static void printGameOverMessage() {
-        System.out.println(CLOSE_GUIDE.getBody());
-        System.out.println(RESTART_OR_CLOSE_GUIDE.getBody());
+    public static void print(JudgementResult result) {
+        String JudgementResultMessage = makeJudgementResultMessage(result);
+        System.out.println(JudgementResultMessage);
     }
 
     private static String makeJudgementResultMessage(JudgementResult judgementResult) {
         StringBuilder stringBuilder = new StringBuilder();
+
+        if (judgementResult.isMaxStrike()) {
+            stringBuilder.append(MAX_STRIKE_AND_CLOSE_GUIDE.getBody());
+            return stringBuilder.toString();
+        }
 
         if (judgementResult.getNumberOfBall() > 0) {
             stringBuilder.append(judgementResult.getNumberOfBall() + "볼 ");
@@ -35,6 +30,11 @@ public class View {
         if (judgementResult.getNumberOfStrike() > 0) {
             stringBuilder.append(judgementResult.getNumberOfStrike() + "스트라이크 ");
         }
+
+        if (judgementResult.getNumberOfBall() == 0 && judgementResult.getNumberOfStrike() == 0) {
+            stringBuilder.append("낫싱");
+        }
+
         return stringBuilder.toString();
     }
 }

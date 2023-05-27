@@ -6,16 +6,16 @@ import static baseball.Message.SIGNAL_INVALID_ERROR;
 
 public class Application {
     public static void main(String[] args) {
-        final String START_SIGNAL = "1";
+        final String RESTART_SIGNAL = "1";
         final String CLOSE_SIGNAL = "2";
 
         Game game = new Game();
+        game.proceed();
 
-        String signal = START_SIGNAL;
-
-        while (signal.equals(START_SIGNAL)) {
-            game.start();
-            signal = Console.readLine();
+        String signal = Console.readLine();
+        while (signal.equals(RESTART_SIGNAL)) {
+           game.proceed();
+           signal = Console.readLine();
         }
 
         if (!signal.equals(CLOSE_SIGNAL)) {
