@@ -9,8 +9,7 @@ public class Application {
         final String START_SIGNAL = "1";
         final String CLOSE_SIGNAL = "2";
 
-        Referee referee = new Referee();
-        Game game = new Game(referee);
+        Game game = new Game();
 
         String signal = START_SIGNAL;
 

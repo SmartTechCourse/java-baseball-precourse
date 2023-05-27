@@ -4,15 +4,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 public class Referee {
-
-    public JudgementResult judge(Player player, Opponent computer) {
-        List<Integer> playerNumber = player.getNumber();
-        List<Integer> opponentNumber = computer.getNumber();
-
-        return compare(playerNumber, opponentNumber);
-    }
-
-    private JudgementResult compare(List<Integer> playerNumber, List<Integer> opponentNumber) {
+    public JudgementResult judge(List<Integer> playerNumber, List<Integer> opponentNumber) {
         int numberOfStrike = countStrike(playerNumber, opponentNumber);
         int numberOfBall = countBall(playerNumber, opponentNumber);
 
